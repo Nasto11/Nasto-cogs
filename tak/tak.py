@@ -13,19 +13,19 @@ class Music:
 				
     @commands.group(pass_context=True)		
     @checks.is_owner()
-    async def music(self, ctx):
+    async def music(self,ctx)
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
 
     @music.command(pass_context=True)
     @checks.is_owner()
     async def _on(self, ctx, *, nickname=""):
-	"""Adds "|Music on voice!"
+    """Adds "|Music on voice!"
 		
     to the nickname"""
-		nickname = nickname.strip()
-		if nickname == "Dank Bot |Music on voice!":
-			nickname = "Dank Bot |Music on voice!"
+        nickname = nickname.strip()
+        if nickname == "Dank Bot |Music on voice!":
+		    nickname = "Dank Bot |Music on voice!"
         try:
             await self.bot.change_nickname(ctx.message.server.me, nickname)
         except discord.Forbidden:
@@ -34,17 +34,17 @@ class Music:
     @music.command(pass_context=True)	
     @checks.is_owner()	
     async def _off(self, ctx, *, nickname=""):
-	"""Removes "|Music on voice!"
-		
-	from the nickname"""
-		nickname = nickname.strip()
-		if nickname == "":
-			nickname = None
-		try:
-			await self.bot.change_nickname(ctx.message.server.me, nickname)
-		except discord.Forbidden:
-			await self.bot.say("I cannot do that, I miss the `Change Nickname` permission")
+    """Removes "|Music on voice!"
+    	
+    from the nickname"""
+        nickname = nickname.strip()
+        if nickname == "":
+            nickname = None
+        try:
+            await self.bot.change_nickname(ctx.message.server.me, nickname)
+        except discord.Forbidden:
+            await self.bot.say("I cannot do that, I miss the `Change Nickname` permission")
 
     def setup(bot):
-		bot.add_cog(Music)
+        bot.add_cog(Music)
 
