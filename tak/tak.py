@@ -46,6 +46,6 @@ class Music:
         except discord.Forbidden:
             await self.bot.say("I cannot do that, I miss the `Change Nickname` permission")
 
-    def setup(bot):
+def setup(bot):
         bot.add_cog(Music)
 
