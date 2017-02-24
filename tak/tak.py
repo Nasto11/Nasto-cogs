@@ -27,8 +27,6 @@ def __init__(self, bot):
         self.session = aiohttp.ClientSession(loop=self.bot.loop)
 		
 def setup(bot):
-    check_folders()
-    check_files()
     n = Music(bot)
     bot.add_cog(n)
 
