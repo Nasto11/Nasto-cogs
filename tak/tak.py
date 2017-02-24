@@ -15,7 +15,7 @@ class Musict:
 def __init__(self, bot):
         self.bot = bot
 		
-@commands.group(pass_context=True)	
+@commands.group(pass_context=True)		
 @checks.is_owner()
 async def music(self, ctx):
         if ctx.invoked_subcommand is None:
@@ -33,19 +33,16 @@ async def _on(self, ctx, *, nickname=""):
             await self.bot.say("I cannot do that, I lack the "
                 "\"Change Nickname\" permission.")
 	
-
-    @checks.is_owner()
-    async def _off(self, ctx, *, nickname=""):
-        """Sets Red's nickname
-        Leaving this empty will remove it."""
+@commands.group(pass_context=True)	
+@checks.is_owner()	
+async def _off(self, ctx, *, nickname=""):
         nickname = nickname.strip()
         if nickname == "":
             nickname = None
         try:
             await self.bot.change_nickname(ctx.message.server.me, nickname)
-            await self.bot.say("Done.")
         except discord.Forbidden:
             await self.bot.say("I cannot do that, I lack the "
-"\"Change Nickname\" permission.")
+                "\"Change Nickname\" permission.")
 		
 
