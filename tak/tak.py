@@ -20,9 +20,9 @@ class Music:
     @music.command(pass_context=True)
     @checks.is_owner()
     async def _on(self, ctx, *, nickname=""):
-    """Adds "|Music on voice!"
+        """Adds "|Music on voice!"
 		
-    to the nickname"""
+        to the nickname"""
         nickname = nickname.strip()
         if nickname == "Dank Bot |Music on voice!":
 		    nickname = "Dank Bot |Music on voice!"
@@ -34,9 +34,9 @@ class Music:
     @music.command(pass_context=True)	
     @checks.is_owner()	
     async def _off(self, ctx, *, nickname=""):
-    """Removes "|Music on voice!"
+        """Removes "|Music on voice!"
     	
-    from the nickname"""
+        from the nickname"""
         nickname = nickname.strip()
         if nickname == "":
             nickname = None
