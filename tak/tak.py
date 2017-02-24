@@ -3,24 +3,25 @@ from discord.ext import commands
 from .utils.dataIO import fileIO
 from .utils import checks
 from __main__ import send_cmd_help
-from random import choice as rndchoice
 import os
 import time
 
 
+  class Kek:
+     """Music thingy that changes nickname when u type !music on (or !music off)"""
+
 
 def __init__(self, bot):
         self.bot = bot
-        self.setowner_lock = False
 		
 		
 @checks.is_owner()
-async def animate(self, ctx):
+async def music(self, ctx):
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
 
 
-
+@checks.is_owner()
 async def _on(self, ctx, *, nickname=""):
         nickname = nickname.strip()
         if nickname == "":
@@ -32,7 +33,7 @@ async def _on(self, ctx, *, nickname=""):
                 "\"Change Nickname\" permission.")
 	
 	
-	
+@checks.is_owner()	
 async def _off(self, ctx, *, nickname=""):
         nickname = nickname.strip()
         if nickname == "":
