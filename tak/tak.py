@@ -21,7 +21,7 @@ async def music(self, ctx):
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
 
-@commands.group(pass_context=True)
+@music.command(pass_context=True)
 @checks.is_owner()
 async def _on(self, ctx, *, nickname=""):
         nickname = nickname.strip()
@@ -33,7 +33,7 @@ async def _on(self, ctx, *, nickname=""):
             await self.bot.say("I cannot do that, I lack the "
                 "\"Change Nickname\" permission.")
 	
-@commands.group(pass_context=True)	
+@music.command(pass_context=True)	
 @checks.is_owner()	
 async def _off(self, ctx, *, nickname=""):
         nickname = nickname.strip()
