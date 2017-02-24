@@ -25,7 +25,7 @@ class Music:
 		
         to the nickname"""
         nickname = nickname.strip()
-        if nickname == "Dank Bot |Music on voice!":
+        if nickname == "":
             nickname = "Dank Bot |Music on voice!"
         try:
             await self.bot.change_nickname(ctx.message.server.me, nickname)
