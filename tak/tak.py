@@ -14,7 +14,6 @@ def __init__(self, bot):
         self.setowner_lock = False
 		
 		
-@commands.group(pass_context=True)
 @checks.is_owner()
 async def animate(self, ctx):
         if ctx.invoked_subcommand is None:
