@@ -14,7 +14,7 @@ class Music:
 				
     @commands.group(pass_context=True)		
     @checks.is_owner()
-    async def music(self, ctx, bot):
+    async def music(self, ctx, *):
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
 
@@ -47,5 +47,5 @@ class Music:
             await self.bot.say("I cannot do that, I miss the `Change Nickname` permission")
 
 def setup(bot):
-        bot.add_cog(Music)
+        bot.add_cog(Music(bot))
 
