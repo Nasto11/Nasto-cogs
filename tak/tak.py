@@ -20,7 +20,7 @@ class Music:
 
     @music.command(pass_context=True)
     @checks.is_owner()
-    async def _on(self, ctx, *, nickname=""):
+    async def on(self, ctx, *, nickname=""):
         """Adds "|Music on voice!"
 		
         to the nickname"""
@@ -34,7 +34,7 @@ class Music:
 	
     @music.command(pass_context=True)	
     @checks.is_owner()	
-    async def _off(self, ctx, *, nickname=""):
+    async def off(self, ctx, *, nickname=""):
         """Removes "|Music on voice!"
     	
         from the nickname"""
