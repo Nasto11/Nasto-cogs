@@ -11,14 +11,14 @@ def __init__(self, bot):
     self.bot = bot
     self.setowner_lock = False
 				
- @commands.group(pass_context=True)		
- @checks.is_owner()
+  @commands.group(pass_context=True)		
+  @checks.is_owner()
  async def music(self, ctx):
     if ctx.invoked_subcommand is None:
         await send_cmd_help(ctx)
 
- @music.command(pass_context=True)
- @checks.is_owner()
+  @music.command(pass_context=True)
+  @checks.is_owner()
  async def _on(self, ctx, *, nickname=""):
     nickname = nickname.strip()
     if nickname == "Dank Bot |Music on voice!":
@@ -28,8 +28,8 @@ def __init__(self, bot):
     except discord.Forbidden:
         await self.bot.say("I cannot do that, I miss the `Change Nickname` permission")
 	
- @music.command(pass_context=True)	
- @checks.is_owner()	
+  @music.command(pass_context=True)	
+  @checks.is_owner()	
  async def _off(self, ctx, *, nickname=""):
      nickname = nickname.strip()
     if nickname == "":
