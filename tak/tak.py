@@ -25,6 +25,9 @@ def __init__(self, bot):
         self.file_path = "data/red/disabled_commands.json"
         self.disabled_commands = dataIO.load_json(self.file_path)
         self.session = aiohttp.ClientSession(loop=self.bot.loop)
+		
+def setup(bot):
+    bot.add_cog(Music(bot))
 
 		
 @commands.group(pass_context=True)		
