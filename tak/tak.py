@@ -27,7 +27,12 @@ def __init__(self, bot):
         self.session = aiohttp.ClientSession(loop=self.bot.loop)
 		
 def setup(bot):
-    bot.add_cog(Music(bot))
+    check_folders()
+    check_files()
+    n = Music(bot)
+    bot.add_listener(n._off, "on_message")
+	bot.add_listener(n._on "on_message")
+    bot.add_cog(n)
 
 		
 @commands.group(pass_context=True)		
