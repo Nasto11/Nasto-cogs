@@ -1,0 +1,6 @@
+{
+    "AUTHOR" : "Nasto",
+    "DESCRIPTION" : "When a command is used change nickname of the bot.",
+    "DISABLED" : false,
+    "NAME" : "Name switcher (not customizable thru discord)",
+}
