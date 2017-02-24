@@ -1,19 +1,7 @@
 import discord
 from discord.ext import commands
-from cogs.utils import checks
-from __main__ import set_cog
-from .utils.dataIO import dataIO
-from .utils.chat_formatting import pagify, box
-
-import importlib
-import traceback
-import logging
-import asyncio
-import threading
-import datetime
-import glob
+from __main__ import send_cmd_help
 import os
-import aiohttp
 
 
 class Music:
@@ -39,8 +27,7 @@ async def _on(self, ctx, *, nickname=""):
         try:
             await self.bot.change_nickname(ctx.message.server.me, nickname)
         except discord.Forbidden:
-            await self.bot.say("I cannot do that, I lack the "
-                "\"Change Nickname\" permission.")
+            await self.bot.say("I cannot do that, I miss the `Change Nickname` permission")
 	
 @music.command(pass_context=True)	
 @checks.is_owner()	
@@ -51,8 +38,7 @@ async def _off(self, ctx, *, nickname=""):
         try:
             await self.bot.change_nickname(ctx.message.server.me, nickname)
         except discord.Forbidden:
-            await self.bot.say("I cannot do that, I lack the "
-                "\"Change Nickname\" permission.")
+            await self.bot.say("I cannot do that, I miss the `Change Nickname` permission")
 
 def setup(bot):
     bot.add_cog(Music)
