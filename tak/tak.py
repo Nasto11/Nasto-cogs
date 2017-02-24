@@ -7,7 +7,7 @@ import os
 class Music:
     """Changes nickname when command is used"""
 
- def __init__(self, bot):
+def __init__(self, bot):
         self.bot = bot
         self.setowner_lock = False
 				
