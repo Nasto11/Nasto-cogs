@@ -55,5 +55,5 @@ async def _off(self, ctx, *, nickname=""):
                 "\"Change Nickname\" permission.")
 
 def setup(bot):
-    bot.add_cog(Music(bot))
+    bot.add_cog(Music)
 
