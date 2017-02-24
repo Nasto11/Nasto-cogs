@@ -16,7 +16,7 @@ import os
 import aiohttp
 
 
-class Musict:
+class Music:
     """Changes nickname when command is used"""
 
 def __init__(self, bot):
