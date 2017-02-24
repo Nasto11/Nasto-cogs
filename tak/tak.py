@@ -14,7 +14,7 @@ class Music:
 				
     @commands.group(pass_context=True)		
     @checks.is_owner()
-    async def music(self, ctx):
+    async def music(self, ctx, bot):
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
 
