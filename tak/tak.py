@@ -26,7 +26,7 @@ async def music(self, ctx):
 async def _on(self, ctx, *, nickname=""):
         nickname = nickname.strip()
         if nickname == "":
-            nickname = Dank Bot |Music on voice!
+            nickname = "Dank Bot |Music on voice!"
         try:
             await self.bot.change_nickname(ctx.message.server.me, nickname)
         except discord.Forbidden:
