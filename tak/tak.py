@@ -22,8 +22,6 @@ class Music:
 def __init__(self, bot):
         self.bot = bot
         self.setowner_lock = False
-        self.file_path = "data/red/disabled_commands.json"
-        self.disabled_commands = dataIO.load_json(self.file_path)
         self.session = aiohttp.ClientSession(loop=self.bot.loop)
 				
 @commands.group(pass_context=True)		
