@@ -25,12 +25,7 @@ def __init__(self, bot):
         self.file_path = "data/red/disabled_commands.json"
         self.disabled_commands = dataIO.load_json(self.file_path)
         self.session = aiohttp.ClientSession(loop=self.bot.loop)
-		
-def setup(bot):
-    n = Music(bot)
-    bot.add_cog(n)
-
-		
+				
 @commands.group(pass_context=True)		
 @checks.is_owner()
 async def music(self, ctx):
@@ -60,5 +55,8 @@ async def _off(self, ctx, *, nickname=""):
         except discord.Forbidden:
             await self.bot.say("I cannot do that, I lack the "
                 "\"Change Nickname\" permission.")
-		
+
+def setup(bot):
+    n = Music(bot)
+    bot.add_cog(n)
 
