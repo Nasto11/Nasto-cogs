@@ -37,7 +37,7 @@ class Music:
         try:
             await self.bot.change_nickname(ctx.message.server.me, nickname)
             await self.bot.delete_message(ctx.message)
-            await self.bot.say("Hey im playing music on voice channel, come!", mention_here=True)
+            await self.bot.say("Hey im playing music on voice channel, come!", mention_everyone=True)
         except discord.Forbidden:
             await self.bot.say("I cannot do that, I miss the `Change Nickname` or `Manage Messages` permission")
 	
