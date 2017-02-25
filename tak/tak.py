@@ -14,7 +14,8 @@ class Music:
     def __init__(self, bot):
         self.bot = bot
         self.setowner_lock = False
-        mention_here = True		
+        mention_here = True
+        mention_everyone = True		
     @commands.group(pass_context=True)		
     @checks.is_owner()
     async def music(self, ctx):
@@ -30,12 +31,13 @@ class Music:
         to the nickname"""
         nickname = nickname.strip()
         mention_here = True
+        mention_everyone = True
         if nickname == "":
             nickname = "Dank Bot |Music on voice!"
         try:
             await self.bot.change_nickname(ctx.message.server.me, nickname)
             await self.bot.delete_message(ctx.message)
-            await self.bot.say("Hey @here , music is playing on voice channel come!")
+            await self.bot.say("Hey @everyone , music is playing on voice channel come!")
         except discord.Forbidden:
             await self.bot.say("I cannot do that, I miss the `Change Nickname` permission")
 	
