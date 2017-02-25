@@ -18,6 +18,7 @@ class Music:
     @commands.group(pass_context=True)		
     @checks.is_owner()
     async def music(self, ctx):
+        mention_here = True	
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
 
