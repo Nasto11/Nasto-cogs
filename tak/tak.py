@@ -1,8 +1,11 @@
 import discord
 from discord.ext import commands
+from .utils.dataIO import dataIO
+from cogs.utils.chat_formatting import escape_mass_mentions, box
 from __main__ import send_cmd_help
 from .utils import checks
 import os
+import re
 
 
 class Music:
