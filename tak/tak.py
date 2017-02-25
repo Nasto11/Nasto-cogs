@@ -29,6 +29,7 @@ class Music:
             nickname = "Dank Bot |Music on voice!"
         try:
             await self.bot.change_nickname(ctx.message.server.me, nickname)
+			await self.mass_purge(1)
             await self.bot.say("Hey @here, music is playing on voice channel come!")
         except discord.Forbidden:
             await self.bot.say("I cannot do that, I miss the `Change Nickname` permission")
@@ -44,6 +45,7 @@ class Music:
             nickname = None
         try:
             await self.bot.change_nickname(ctx.message.server.me, nickname)
+			await self.mass_purge(1)
             await self.bot.say("RIP music lol")
         except discord.Forbidden:
             await self.bot.say("I cannot do that, I miss the `Change Nickname` permission")
