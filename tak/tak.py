@@ -37,9 +37,9 @@ class Music:
         try:
             await self.bot.change_nickname(ctx.message.server.me, nickname)
             await self.bot.delete_message(ctx.message)
-            await self.bot.say("Hey @everyone , music is playing on voice channel come!")
+            await self.bot.say("Hey im playing music on voice channel, come!", mention_here=True)
         except discord.Forbidden:
-            await self.bot.say("I cannot do that, I miss the `Change Nickname` permission")
+            await self.bot.say("I cannot do that, I miss the `Change Nickname` or `Manage Messages` permission")
 	
     @music.command(pass_context=True)	
     @checks.is_owner()	
@@ -55,7 +55,7 @@ class Music:
             await self.bot.delete_message(ctx.message)
             await self.bot.say("RIP music lol")
         except discord.Forbidden:
-            await self.bot.say("I cannot do that, I miss the `Change Nickname` permission")
+            await self.bot.say("I cannot do that, I miss the `Change Nickname` or `Manage Messages` permission")
 
 def setup(bot):
         bot.add_cog(Music(bot))
