@@ -25,10 +25,12 @@ class Music:
 		
         to the nickname"""
         nickname = nickname.strip()
+        mention_here = True
         if nickname == "":
             nickname = "Dank Bot |Music on voice!"
         try:
             await self.bot.change_nickname(ctx.message.server.me, nickname)
+			await self.bot.say("Hey, music is playing on voice channel come! mention_here")
         except discord.Forbidden:
             await self.bot.say("I cannot do that, I miss the `Change Nickname` permission")
 	
