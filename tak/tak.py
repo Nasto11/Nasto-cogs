@@ -1,8 +1,11 @@
 import discord
 from discord.ext import commands
+from .utils.dataIO import dataIO
+from cogs.utils.chat_formatting import escape_mass_mentions, box
 from __main__ import send_cmd_help
 from .utils import checks
 import os
+import re
 
 
 class Music:
@@ -11,10 +14,12 @@ class Music:
     def __init__(self, bot):
         self.bot = bot
         self.setowner_lock = False
-				
+        mention_here = True
+        mention_everyone = True		
     @commands.group(pass_context=True)		
     @checks.is_owner()
     async def music(self, ctx):
+        mention_here = True	
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
 
@@ -26,13 +31,22 @@ class Music:
         to the nickname"""
         nickname = nickname.strip()
         mention_here = True
+<<<<<<< HEAD
+=======
+        mention_everyone = True
+>>>>>>> origin/master
         if nickname == "":
             nickname = "Dank Bot |Music on voice!"
         try:
             await self.bot.change_nickname(ctx.message.server.me, nickname)
+<<<<<<< HEAD
 			await self.bot.say("Hey, music is playing on voice channel come! mention_here")
+=======
+            await self.bot.delete_message(ctx.message)
+            await self.bot.say("Hey im playing music on voice channel, come!", mention_everyone=True)
+>>>>>>> origin/master
         except discord.Forbidden:
-            await self.bot.say("I cannot do that, I miss the `Change Nickname` permission")
+            await self.bot.say("I cannot do that, I miss the `Change Nickname` or `Manage Messages` permission")
 	
     @music.command(pass_context=True)	
     @checks.is_owner()	
@@ -45,9 +59,14 @@ class Music:
             nickname = None
         try:
             await self.bot.change_nickname(ctx.message.server.me, nickname)
+<<<<<<< HEAD
 			await self.bot.say("RIP music lol")
+=======
+            await self.bot.delete_message(ctx.message)
+            await self.bot.say("RIP music lol")
+>>>>>>> origin/master
         except discord.Forbidden:
-            await self.bot.say("I cannot do that, I miss the `Change Nickname` permission")
+            await self.bot.say("I cannot do that, I miss the `Change Nickname` or `Manage Messages` permission")
 
 def setup(bot):
         bot.add_cog(Music(bot))
