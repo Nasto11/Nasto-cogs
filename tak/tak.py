@@ -22,6 +22,7 @@ class Music:
         mention_here = True	
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
+            await self.bot.say("Disable nomassmention before ;)")
 
     @music.command(pass_context=True)
     @checks.is_owner()
