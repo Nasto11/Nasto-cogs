@@ -43,6 +43,7 @@ class Music:
             nickname = None
         try:
             await self.bot.change_nickname(ctx.message.server.me, nickname)
+			await self.bot.say("RIP music lol")
         except discord.Forbidden:
             await self.bot.say("I cannot do that, I miss the `Change Nickname` permission")
 
