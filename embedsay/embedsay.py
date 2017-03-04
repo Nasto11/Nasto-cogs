@@ -7,7 +7,6 @@ class Embedsay:
 
     def __init__(self, bot):
         self.bot = bot
-        self.data = dataIO.load_json(JSON)
 
     @commands.command()
     async def embedsay(self):
