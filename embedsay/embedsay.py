@@ -10,7 +10,7 @@ class Embedsay:
 
     @commands.command()
     async def autism(self):
-    """Says stuff!"""
+        """Says stuff!"""
         embed=discord.Embed(title="Im saying", url='http://youhaveautism.com/', description="that u have autism ", color=0x0080ff)
         await self.bot.say(embed=embed)
 
