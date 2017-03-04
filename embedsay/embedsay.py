@@ -9,7 +9,7 @@ class Embedsay:
         self.bot = bot
 
     @commands.command()
-    async def embedsay(ctx, self, *text):
+    async def embedsay(ctx, self, *text, message):
         """Says stuff!"""
 
         text = " ".join(text)
