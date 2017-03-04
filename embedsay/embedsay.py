@@ -8,8 +8,8 @@ class Embedsay:
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
-    async def embedsay(ctx, self, *text, message):
+    @commands.command(pass_context=True)
+    async def embedsay(ctx, self, *text):
         """Says stuff!"""
 
         text = " ".join(text)
