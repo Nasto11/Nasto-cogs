@@ -13,7 +13,7 @@ class Embedsay:
         """Says stuff!"""
 
         text = " ".join(text)
-		author = ctx.message.author
+        author = ctx.message.author
         server = ctx.message.server
 
         if not user:
