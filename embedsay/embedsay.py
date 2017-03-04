@@ -9,12 +9,11 @@ class Embedsay:
         self.bot = bot
 
     @commands.command(pass_context=True)
-    async def embedsay(ctx, self, message, *):
+    async def embedsay(ctx, self, message, *text):
         """Says stuff!"""
 
         text = " ".join(text)
         author = ctx.message.author
-        server = ctx.message.server
 
         if not user:
             user = author
