@@ -13,7 +13,6 @@ class Embedsay:
         """Says stuff!"""
 
         text = " ".join(text)
-        avatar = author.avatar_url if author.avatar else author.default_avatar_url
         embed=discord.Embed(description=text, color=0xff00bb)
         embed.set_author(name='{} says', icon_url=avatar)
         await self.bot.delete_message(ctx.message)
