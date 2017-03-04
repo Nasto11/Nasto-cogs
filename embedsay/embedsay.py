@@ -16,7 +16,7 @@ class Embedsay:
 		author = ctx.message.author
         server = ctx.message.server
 
-		if not user:
+        if not user:
             user = author
 
         embed=discord.Embed(description=text, color=0xff00bb)
