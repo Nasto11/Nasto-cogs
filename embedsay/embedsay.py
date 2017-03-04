@@ -14,10 +14,6 @@ class Embedsay:
 
         text = " ".join(text)
         author = ctx.message.author
-
-        if not user:
-            user = author
-
         embed=discord.Embed(description=text, color=0xff00bb)
         embed.set_author(name='{} says', icon_url=author)
         await self.bot.delete_message(ctx.message)
