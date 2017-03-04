@@ -11,8 +11,6 @@ class Embedsay:
     @commands.command()
     async def embedsay(self):
         """Says stuff!"""
-
-        text = " ".join(text)
         if author.id in self.data:
                     avatar = author.avatar_url if author.avatar else author.default_avatar_url
                     if self.data[author.id][text]:
