@@ -12,7 +12,7 @@ class Embedsay:
     async def autism(self):
         """Says stuff!"""
         embed=discord.Embed(title="Im saying", url='http://youhaveautism.com/', description="that u have autism ", color=0x0080ff)
-		await self.bot.delete_message(ctx.message)
+        await self.bot.delete_message(ctx.message)
         await self.bot.say(embed=embed)
 		
 
