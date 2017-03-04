@@ -24,4 +24,4 @@ class Embedsay:
                     await self.bot.send_message(message.channel, embed=em)
 
 def setup(bot):
-    bot.add_cog(Mycog(bot))
+    bot.add_cog(Embedsay(bot))
