@@ -14,7 +14,8 @@ class Embedsay:
 
         author = ctx.message.author
         em=discord.Embed(description=text, color=0xff00bb)
-        em.set_author(name='{} says'.format(author), icon_url=author.avatar_url)
+        em.set_author(name='{} says'.format(author))
+        em.set_thumbnail(url=author.avatar_url)
         await self.bot.delete_message(ctx.message)
         await self.bot.say(embed=em)
 
