@@ -1,0 +1,6 @@
+{
+    "AUTHOR" : "Nasto",
+    "DESCRIPTION" : "Gives rank to user when typed "Understood"",
+    "DISABLED" : false,
+    "NAME" : "Approval",
+}
