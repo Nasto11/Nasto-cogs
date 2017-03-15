@@ -10,8 +10,8 @@ class Approval:
 
     def __init__(self, bot):
         self.bot = bot
-        self.defaultrole = "data/approval/defaultrole.json"
-        self.roleset = dataIO.load_json(self.defaultrole)
+        self.default = "data/approval/defaultrole.json"
+        self.set = dataIO.load_json(self.defaultrole)
         
     @commands.command(pass_context=True)
     @checks.admin_or_permissions(manage_server=True)
@@ -25,18 +25,18 @@ class Approval:
                 count += 1
 
         if count == len(server.roles):
-            await self.bot.say("Role does not exist on this server. Please try again.")
+            await self.bot.say("Role does not exist.")
             return
         if server.id not in self.roleset:
-            self.roleset[server.id] = default_role
-            dataIO.save_json(self.defaultrole, self.roleset)
+            self.set[server.id] = default_role
+            dataIO.save_json(self.default, self.set)
         else:
-            self.roleset[server.id] = default_role
-            dataIO.save_json(self.defaultrole, self.roleset)
+            self.set[server.id] = default_role
+            dataIO.save_json(self.default, self.set)
         await self.bot.say("Succesfully changed the default *role* to {}!".format(default_role))
 
 
-    async def listener(self, message):
+    async def listener(self, ctx, message):
         author = ctx.message.author
         server = author.server
         channel = ctx.message.channel
