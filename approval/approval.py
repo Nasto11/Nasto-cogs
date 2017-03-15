@@ -11,6 +11,7 @@ class Approval:
     def __init__(self, bot):
         self.bot = bot
         self.defaultrole = "data/approval/defaultrole.json"
+        self.roleset = dataIO.load_json(self.defaultrole)
         
 
     async def setdefaultrole(self, ctx, default_role):
@@ -30,6 +31,7 @@ class Approval:
         else:
             self.roleset[server.id] = default_role
             dataIO.save_json(self.defaultrole, self.roleset)
+        await self.bot.say("Default role is now *role*!")
 
     async def listener(self, message):
         author = ctx.message.author
