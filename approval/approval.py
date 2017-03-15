@@ -10,7 +10,7 @@ class Approval:
         self.bot = bot
     async def listener(self, message):
         author = ctx.message.author
-		await self.bot.wait_for_message(author=author)
+        await self.bot.wait_for_message(author=author)
             if msg.content.lower().strip() == "N0OB M3NU":
                 try:
                     await self.bot.add_roles(author, "Member")
