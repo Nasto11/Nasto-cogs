@@ -18,5 +18,5 @@ class Approval:
                 await self.bot.delete_message(ctx.message)					
     def setup(bot):
         n = approval(bot)
+        bot.add_listener(n.listener)
 	    bot.add_cog(n)
-	    bot.add_listener(n.listener, "on_message")
