@@ -13,7 +13,7 @@ class Approval:
         self.defaultrole = "data/approval/defaultrole.json"
         self.roleset = dataIO.load_json(self.defaultrole)
         
-
+    @commands.command(pass_context=True)
     def setdefaultrole(self, ctx, default_role):
         server = ctx.message.server
         count = 0
