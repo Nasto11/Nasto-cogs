@@ -38,6 +38,7 @@ class Approval:
 
     async def listener(self, ctx, message):
         author = ctx.message.author
+        default_role = self.set[server.id]
         server = author.server
         channel = ctx.message.channel
         user = author
