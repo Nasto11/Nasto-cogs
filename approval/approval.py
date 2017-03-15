@@ -12,9 +12,9 @@ class Embedsay:
         author = ctx.message.author
 		if message.author.id !=self.bot.user.id:
 		    try:
-			    if message.content == "N0Ob M3NU":
-				    await self.bot.add_roles(author, member)
-
+			    if message.content == "N0Ob M3NU":                
+                    async for x in self.bot.logs_from(channel, before=message.timestamp, limit=1):
+                        await self.bot.add_roles(author, Member) 
 
 def setup(bot):
     n = approval(bot)
