@@ -10,11 +10,10 @@ class Approval:
         self.bot = bot
     async def listener(self, message):
         author = ctx.message.author
-		if message.author.id !=self.bot.user.id:
-		    try:
-			    if message.content == "N0OB M3NU":                
-                    async for x in self.bot.logs_from(channel, before=message.timestamp, limit=1):
-                        await self.bot.add_roles(author, Member) 
+		await self.bot.wait_for_message(author=author)
+            if msg.content.lower().strip() == "N0OB M3NU":
+                try:
+                    await self.bot.add_roles(author, userrole)
 
     def setup(bot):
         n = approval(bot)
