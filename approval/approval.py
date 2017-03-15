@@ -13,7 +13,7 @@ class Approval:
 		await self.bot.wait_for_message(author=author)
             if msg.content.lower().strip() == "N0OB M3NU":
                 try:
-                    await self.bot.add_roles(author, Member)
+                    await self.bot.add_roles(author, "Member")
 
     def setup(bot):
         n = approval(bot)
