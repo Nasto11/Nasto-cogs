@@ -9,7 +9,6 @@ class Embedsay:
     def __init__(self, bot):
         self.bot = bot
     async def listener(self, message):
-	    channel = message.channel
         author = ctx.message.author
 		if message.author.id !=self.bot.user.id:
 		    try:
