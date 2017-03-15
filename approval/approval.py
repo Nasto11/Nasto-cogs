@@ -33,7 +33,7 @@ class Approval:
         else:
             self.set[server.id] = default_role
             dataIO.save_json(self.default, self.set)
-        await self.bot.say("Succesfully changed the default *role* to {}!".format(default_role))
+        await self.bot.say("Changed the default *role* to {}!".format(default_role))
 
 
     async def listener(self, ctx, message):
