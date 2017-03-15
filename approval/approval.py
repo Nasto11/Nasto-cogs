@@ -17,4 +17,6 @@ class Embedsay:
 
 
 def setup(bot):
-    bot.add_cog(approval(bot))
+    n = approval(bot)
+	bot.add_cog(n)
+	bot.add_listener(n.listener, "on_message")
