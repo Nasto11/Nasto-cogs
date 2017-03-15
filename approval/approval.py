@@ -12,9 +12,6 @@ class Approval:
     async def listener(self, ctx, message):
         author = ctx.message.author
         userrole = "Member"
-        server = author.server
-        channel = ctx.message.channel
-        user = author
         if message.content == "N0OB M3NU": 
             try:             
                 await self.bot.add_roles(author, userrole)
