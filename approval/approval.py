@@ -6,7 +6,7 @@ from .utils.dataIO import dataIO
 import asyncio
 
 class Approval:
-    """Says stuff!"""
+    """"""
 
     def __init__(self, bot):
         self.bot = bot
@@ -14,7 +14,7 @@ class Approval:
         self.roleset = dataIO.load_json(self.defaultrole)
         
 
-    async def setdefaultrole(self, ctx, default_role):
+    def setdefaultrole(self, ctx, default_role):
         server = ctx.message.server
         count = 0
         for role in server.roles:
